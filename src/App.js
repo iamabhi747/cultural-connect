@@ -1,23 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import { useQuery, gql } from '@apollo/client';
+
+const GET_POSTS = gql`
+  query GetPosts {
+    posts {
+      _id
+      title
+      body
+    }
+  }
+`;
+
+function Posts() {
+  const { loading, error, data } = useQuery(GET_POSTS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :</p>;
+
+  return data.posts.map(({ _id, title, body }) => (
+    <div key={_id}>
+      <p>{title}</p>
+      <p>{body}</p>
+    </div>
+  ));
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>My first Apollo app 🚀</h2>
+      <br/>
+      <Posts />
     </div>
   );
 }
