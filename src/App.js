@@ -64,11 +64,10 @@ export default function App() {
           backgroundSize: 'cover'
         }
       }>
-      <Navbar/><Post/>
+      <Navbar/>
       <Post/>
-      <Post/>
-      <Post/>
-      <Footer/></div>
+      <Footer/>
+      </div>
     },
     {
       path: "/create",
