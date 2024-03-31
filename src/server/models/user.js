@@ -5,13 +5,12 @@ const UserSchema = new Schema({
     username: String,
     password: String,
     phone: String,
-    interactions: [
-        {
-            likes: Array,
-            saves: Array,
-            reports: Array
-        }
-    ],
+    interactions:
+    {
+        likes: Array,
+        saves: Array,
+        reports: Array
+    },
     subscriptions: [
         {
             subid: Number,
