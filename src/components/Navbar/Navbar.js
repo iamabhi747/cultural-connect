@@ -8,11 +8,15 @@ import {
 function Navbar() {
   return (
     <>
-      <nav className="navbar bg-[#fdf7eb] rounded-b-3xl  shadow-xl h-[80px] sticky top-0 z-20 ">
+      <nav className="navbar bg-[#fdf7eb] rounded-b-3xl  shadow-xl h-[80px] sticky top-0 z-20 " style={
+        {
+          fontFamily: 'El Messiri'
+        }
+      }>
       <div className="flex m-auto font-bold ">
-        <Link className="navbar-brand mt-3 text-4xl" to="/">Cultural</Link>
+        <Link className="navbar-brand mt-3 text-4xl m-0 p-0" to="/">Cultural</Link>
         <img src={c1} alt="" className='w-[60px] m-0 p-0'></img> 
-        <Link className='navbar-brand mt-3 text-[#ff3b30] text-4xl' to="/">connecT</Link>
+        <Link className='navbar-brand mt-3 text-[#ff3b30] text-4xl m-0 p-0' to="/">connecT</Link>
       </div>
     </nav>
     </>

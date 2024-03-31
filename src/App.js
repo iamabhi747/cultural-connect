@@ -52,6 +52,8 @@ import Timelinee from './components/Timeline/Timeline'
 import background from './components/background.jpg'
 import Community from './components/Community/Community'
 import CommunityProfile from './components/Community/CommunityProfile'
+import Create from './components/Create/Create'
+import background2 from './components/background2.jpg'
 
 
 export default function App() {
@@ -71,23 +73,33 @@ export default function App() {
     },
     {
       path: "/create",
-      element: <><Navbar/><Footer/></>,
+      element: <><Navbar/> <Create/> <Footer/></>,
     },
     {
       path: "/timeline",
-      element: <><Navbar/> <Timelinee/> <Footer/></>,
+      element: <div style={
+        {
+          backgroundImage: `url(${background2})`,
+          backgroundSize: 'cover'
+        }
+      }><Navbar/> <Timelinee/> <Footer/></div>,
     },
     {
       path: "/community",
-      element: <><Navbar/> <Community/> <Footer/></>,
+      element: <div style={
+        {
+          backgroundImage: `url(${background2})`,
+          backgroundSize: 'cover'
+        }
+      }><Navbar/> <Community/> <Footer/></div>,
     },
     {
       path: "/profile",
       element: <><Navbar/> <Profile/> <Footer/></>,
     },
     {
-      path: '/ccc',
-      element: <><Navbar/> <CommunityProfile/> <Footer/></>,
+      path: '/communityProfile',
+      element: <div><Navbar/> <CommunityProfile/> <Footer/></div>,
     }
   ]);
   return (

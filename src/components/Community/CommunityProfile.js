@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 
-function CommunityProfile() {
+function CommunityProfile(props) {
   return (
     <>
       <div className="gradient-custom-2 bg-white" >
@@ -15,26 +15,20 @@ function CommunityProfile() {
                   
                 </div>
                 <div className="ms-3" style={{ marginTop: '130px' }}>
-                  <MDBTypography tag="h5">Andy Horwitz</MDBTypography>
+                  <MDBTypography tag="h5">{props.title}</MDBTypography>
                   <MDBCardText>New York</MDBCardText>
                 </div>
               </div>
               <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
-                <div className="d-flex justify-content-end text-center py-1">
-                    <button className='mr-12 curosor-pointer border-1 rounded-md p-2 border-black'>
-                    Edit profile
-                  </button>
+                <div className="d-flex justify-content-end text-center py-1 ">
+                    
                   <div>
                     <MDBCardText className="mb-1 h5">253</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Photos</MDBCardText>
+                    <MDBCardText className="small text-muted mb-0">Posts</MDBCardText>
                   </div>
                   <div className="px-3">
                     <MDBCardText className="mb-1 h5">1026</MDBCardText>
                     <MDBCardText className="small text-muted mb-0">Followers</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="mb-1 h5">478</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Following</MDBCardText>
                   </div>
                 </div>
               </div>

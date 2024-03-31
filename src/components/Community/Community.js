@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import img from './c1.png'  
 
 function Community() {
-    const[url, seturl] = useState('')
-    const elements = document.querySelectorAll('.community');
+    // const[url, seturl] = useState('')
+    // const elements = document.querySelectorAll('.community');
 
-    elements.forEach(element => {
-    element.addEventListener('click', () => {
-        let elementName = element.innerHTML
-        seturl(elementName)
-        console.log(url)
-    });
-    });
+    // elements.forEach(element => {
+    // element.addEventListener('click', () => {
+    //     let elementName = element.innerHTML
+    //     seturl(elementName)
+    //     console.log(elementName)
+    // });
+    // });
 
   return (
     <>
@@ -24,7 +25,7 @@ function Community() {
       <div className='flex w-[23rem] m-3'>
       <img src={img} alt=""className='w-[4em] h-[4rem]' />
       <div className="info m-auto ">
-        <p className='community font-bold text-lg mr-[8rem]'>Community 1</p>
+        <NavLink to='/communityProfile' className='community font-bold text-lg mr-[8rem]'>Community 1</NavLink>
       </div> 
       </div> 
       </div> 

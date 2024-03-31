@@ -1,6 +1,7 @@
 import React from 'react'
 import HorizontalTimeline from "react-horizontal-timeline";
 import { useState } from 'react';
+import Spost from '../Post/Spost';
 
 function Timeline() {
     const [value, setValue] = useState(0);
@@ -11,16 +12,17 @@ function Timeline() {
  
     // Description array corresponding to values
     const description = [
-        "The event of 1 Jan 2021 : Happy New Year",
-        "The event of 15 Jan 2021 : Festival",
-        "The event of 22 March 2021 : Board Exam",
+        <Spost/>,
+        <Spost/>,
+        <Spost/>
     ];
   return (
     <div className="root-div mt-[50px]">
             <div style={{
                 width: "95%",
                 height: "100px",
-                margin: "0 auto"
+                margin: "0 auto",
+                fontFamily: 'El Messiri'
             }} className='text-nowrap'>
                 <HorizontalTimeline
                     styles={{ outline: "#DFA867", foreground: "#19295C" }}
