@@ -37,7 +37,7 @@ function Community() {
           <div className='flex w-[23rem] m-3'>
             <img src={img} alt=""className='w-[4em] h-[4rem]' />
             <div className="info m-auto ">
-              <NavLink to='/communityProfile' className='community font-bold text-lg mr-[8rem]'>{name}</NavLink>
+              <NavLink to={`/communityProfile?id=${_id}`} className='community font-bold text-lg mr-[8rem]'>{name}</NavLink>
             </div>
           </div>
         </div>

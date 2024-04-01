@@ -156,6 +156,15 @@ const RootQuery = new GraphQLObjectType({
             resolve: (parent, args) => {
                 return Community.find({});
             }
+        },
+
+        community: {
+            type: CommunityType,
+            args: { id: { type: GraphQLID } },
+            resolve: (parent, args) => {
+                return Community.findById(args.id);
+            }
+        
         }
     }
 });
