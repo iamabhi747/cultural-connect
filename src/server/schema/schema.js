@@ -2,7 +2,7 @@ const graphql = require('graphql');
 const {
     GraphQLObjectType, GraphQLString,
     GraphQLID, GraphQLInt,GraphQLSchema,
-    GraphQLList,GraphQLNonNull
+    GraphQLList,GraphQLNonNull, GraphQLBoolean
 } = graphql;
 
 const User = require('../models/user');
