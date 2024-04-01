@@ -73,7 +73,8 @@ const PostType = new GraphQLObjectType({
         time: { type: GraphQLString },
         interactions: { type: PostInteractionsType },
         keywords: { type: new GraphQLList(GraphQLString) },
-        linkages: { type: LinkagesType }
+        linkages: { type: LinkagesType },
+        isVerified: { type: GraphQLBoolean }
     })
 });
 

@@ -18,7 +18,8 @@ const PostSchema = new Schema({
     linkages: {
         timelines: Array,
         communities: Array
-    }
+    },
+    isVerified: Boolean
 });
 
 module.exports = mongoose.model('Post', PostSchema);
