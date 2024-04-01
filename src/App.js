@@ -37,7 +37,7 @@
 // }
 
 // export default App;
-// Test Chnage for resolving branching issue
+
 
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
@@ -78,7 +78,8 @@ export default function App() {
       element: <div style={
         {
           backgroundImage: `url(${background4})`,
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          height: '100vh',
         }
       }><Navbar /> <Create /> <Footer /></div>,
     },
@@ -87,8 +88,9 @@ export default function App() {
       element: <div style={
         {
           backgroundImage: `url(${background2})`,
-          backgroundSize: 'cover',
-          height: '100vh'
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center center',
+          backgroundAttachment: 'fixed'
         }
       }><Navbar /> <Timelinee /> <Footer /></div>,
     },
@@ -97,7 +99,10 @@ export default function App() {
       element: <div style={
         {
           backgroundImage: `url(${background2})`,
-          backgroundSize: 'cover',
+          backgroundImage: `url(${background2})`,
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center center',
+          backgroundAttachment: 'fixed',
           height: '100vh'
         }
       }><Navbar /> <Community /> <Footer /></div>,

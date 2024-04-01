@@ -60,7 +60,7 @@ function Create() {
 
         <label htmlFor="img" className='mr-3 font-bold ml-6'>Select image :</label>
         <input required type="url" id="img" name="img" multiple className=' p-1 rounded-sm  shadow-inner shadow-gray-800' /> <br />
-        <input className='p-2  bg-[#1047fd]  cursor-pointer  w-[100%] font-bold text-white ' value={'Create Post'} type="submit" />
+        <input className='p-2  bg-[#1047fd]  cursor-pointer  w-[100%] font-bold text-white' value={'Create Post'} type="submit" />
 
       </form>
     </div>
