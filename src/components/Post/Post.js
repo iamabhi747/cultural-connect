@@ -14,6 +14,7 @@ const GET_POSTS = gql`
       title
       body
       media
+      isVerified
       user {
         username
       }
@@ -28,7 +29,7 @@ export default function Post() {
     <p key={i}>{message}</p>
   ));
 
-  return data.posts.map(({ _id, title, body, user, media }) => (
+  return data.posts.map(({ _id, title, body, user, media, isVerified }) => (
     <div key={_id}>
       <div className="card m-auto mt-2 rounded-3xl" style={{ width: '25rem' }}>
         <div className="head flex w-[25rem] rounded-2xl ">
@@ -37,7 +38,8 @@ export default function Post() {
             <div className="info flex-col mr-[10rem] ">
               <p className='font-bold'>Abhinandan</p>
               <p className='text-sm text-nowrap'>Added to Timeline</p>
-              {/* <p className='text-sm'>16/10/2005</p> */}
+              {isVerified ? <p className='text-sm' style={{ color: 'green' }}>✅ Verified</p> : <p className='text-sm' style={{ color: 'red' }}>⭕️ Pending</p>}
+              
             </div>
             <img src={dot} alt="" className='bg-cover w-[2rem] h-[2rem] mt-3 ml-auto' />
           </div>
@@ -53,6 +55,7 @@ export default function Post() {
           <img src={like} alt="" className='h-8 coursor-pointer ml-2' />
           <img src={chat} alt="" className='h-8 ml-2' />
           <img src={share} alt="" className='h-8'/>
+          {!isVerified ? <button className='bg-blue-500 text-white rounded-2xl h-8 w-20 ml-auto mr-2'>Verify</button> : null}
           </div>
         </div>
       </div>

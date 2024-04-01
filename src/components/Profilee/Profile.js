@@ -15,7 +15,8 @@ export default function EditButton() {
                     alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
 
                 </div>
-                <div className="ms-3" style={{ marginTop: '130px' }}>
+                <div className="ms-3" style={{ marginTop: '110px' }}>
+                  <MDBTypography style={{ color: 'yellow'}} tag="h6">⭐️ Organization</MDBTypography>
                   <MDBTypography tag="h5">Abhinandan Bhuse</MDBTypography>
                   <MDBCardText>Pune</MDBCardText>
                 </div>
