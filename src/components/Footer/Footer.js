@@ -25,7 +25,7 @@ function Footer() {
   
   return (
     <>
-     <nav className="navbar sticky bg-[rgba(253,247,235,0.8)] bottom-0 w-[100%] rounded-t-3xl  " style={
+     <nav className="navbar fixed bg-[rgba(253,247,235,0.8)] bottom-0 w-[100%] rounded-t-3xl  " style={
       {
         boxShadow: '0.5px -0.5px rgba(0, 0, 0, 0.8)'
       }

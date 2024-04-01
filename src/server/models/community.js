@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const CommunitySchema = new Schema({
     name: String,
     description: String,
-    keywords: Array
+    keywords: Array,
+    followers: Number
 });
 
 module.exports = mongoose.model('Community', CommunitySchema);

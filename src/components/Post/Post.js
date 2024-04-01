@@ -13,6 +13,9 @@ const GET_POSTS = gql`
       _id
       title
       body
+      user {
+        username
+      }
     }
   }
 `;
@@ -20,16 +23,18 @@ const GET_POSTS = gql`
 export default function Post() {
   const { loading, error, data } = useQuery(GET_POSTS);
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Something Went Wrong, Try refreshing the page</p>;
+  if (error) return error.graphQLErrors.map(({ message }, i) => (
+    <p key={i}>{message}</p>
+  ));
 
-  return data.posts.map(({ _id, title, body }) => (
+  return data.posts.map(({ _id, title, body, user }) => (
     <div key={_id}>
       <div className="card m-auto mt-2 rounded-3xl" style={{ width: '25rem' }}>
         <div className="head flex w-[25rem] rounded-2xl ">
           <div className='flex w-[23rem] m-3'>
             <img src={img} alt=""className='w-[4em] h-[4rem] mr-auto' />
             <div className="info flex-col mr-[10rem] ">
-              <p className='font-bold'>Heading</p>
+              <p className='font-bold'>GGG</p>
               <p className='text-sm text-nowrap'>Added to Timeline</p>
               <p className='text-sm'>16/10/2005</p>
             </div>

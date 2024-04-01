@@ -8,7 +8,7 @@ const cors = require("cors");
 
 app.use(cors({
     optionsSuccessStatus: 200, //option sucess status
-    origin: "http://localhost:3000", //origin allowed to access the server
+    origin: "*", //origin allowed to access the server
 }));
 
 mongoose.connect('mongodb+srv://abhinandanbhuse23:mZslsYm4fCyIbSv2@cluster0.3k9mvvu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')

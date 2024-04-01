@@ -50,7 +50,7 @@ const SubscriptionType = new GraphQLObjectType({
 const UserType = new GraphQLObjectType({
     name: 'User',
     fields: () => ({
-        _id: { type: GraphQLID },
+        id: { type: GraphQLID },
         username: { type: GraphQLString },
         phone: { type: GraphQLString },
         subscriptions: { type: new GraphQLList(SubscriptionType) }
@@ -61,7 +61,12 @@ const PostType = new GraphQLObjectType({
     name: 'Post',
     fields: () => ({
         _id: { type: GraphQLID },
-        userid: { type: GraphQLID },
+        user: {
+            type: UserType,
+            resolve(parent, args) {
+                return User.find({ id: parent.userid });
+            }
+        },
         title: { type: GraphQLString },
         body: { type: GraphQLString },
         media: { type: new GraphQLList(GraphQLString) },
@@ -86,6 +91,17 @@ const TimelineType = new GraphQLObjectType({
                 return Post.find({ "linkages.timelines": { $in: [parent._id] }});
             }
         }
+    })
+});
+
+const CommunityType = new GraphQLObjectType({
+    name: 'Community',
+    fields: () => ({
+        _id: { type: GraphQLID },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
+        keywords: { type: new GraphQLList(GraphQLString) },
+        followers: { type: GraphQLInt },
     })
 });
 
@@ -134,6 +150,13 @@ const RootQuery = new GraphQLObjectType({
                 return Timeline.findById(args.id);
             }
         },
+
+        communities: {
+            type: new GraphQLList(CommunityType),
+            resolve: (parent, args) => {
+                return Community.find({});
+            }
+        }
     }
 });
 
