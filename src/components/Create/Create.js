@@ -61,7 +61,7 @@ function Create() {
 
       <label className='mr-3 font-bold'>Select image :</label>
       <input required type="url" id="img" name="imgurl" multiple className='border-1 border-black' onChange={useHandleChange}/> <br />
-      <button className='p-2 border-1 border-black bg-gradient-to-b from-[#e49cd6] to-[#e37d11] cursor-pointer rounded-2xl mt-[6rem] mb-2 ml-32 font-bold text-white  bg-slate-300' type="submit" >Create Post </button>
+      <button className='p-2 border-1 border-black bg-gradient-to-b from-[#e760cc] to-[#e34611] cursor-pointer rounded-2xl mt-[6rem] mb-2 ml-32 font-bold text-white  bg-slate-300' type="submit" >Create Post </button>
 
     </form>
     </div>

@@ -13,6 +13,7 @@ const GET_POSTS = gql`
       _id
       title
       body
+      media
       user {
         username
       }
@@ -27,16 +28,16 @@ export default function Post() {
     <p key={i}>{message}</p>
   ));
 
-  return data.posts.map(({ _id, title, body, user }) => (
+  return data.posts.map(({ _id, title, body, user, media }) => (
     <div key={_id}>
       <div className="card m-auto mt-2 rounded-3xl" style={{ width: '25rem' }}>
         <div className="head flex w-[25rem] rounded-2xl ">
           <div className='flex w-[23rem] m-3'>
             <img src={img} alt=""className='w-[4em] h-[4rem] mr-auto' />
             <div className="info flex-col mr-[10rem] ">
-              <p className='font-bold'>GGG</p>
+              <p className='font-bold'>Abhinandan</p>
               <p className='text-sm text-nowrap'>Added to Timeline</p>
-              <p className='text-sm'>16/10/2005</p>
+              {/* <p className='text-sm'>16/10/2005</p> */}
             </div>
             <img src={dot} alt="" className='bg-cover w-[2rem] h-[2rem] mt-3 ml-auto' />
           </div>
@@ -45,7 +46,7 @@ export default function Post() {
         <div className='title bg-white text-xl font-bold ml-[1rem] text-left'>
           {title}
         </div>
-        <img src={mountain} className="card-img p-3" alt=''></img>
+        <img src={media[0]} className="card-img p-3" alt=''></img>
         <div className="card-body">
           <p className="card-text">{body}</p>
           <div className='more flex space-x-5 h-10 mt-4'>

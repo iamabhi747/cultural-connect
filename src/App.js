@@ -57,6 +57,7 @@ import background2 from './components/background2.jpg'
 
 
 export default function App() {
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -80,7 +81,8 @@ export default function App() {
       element: <div style={
         {
           backgroundImage: `url(${background2})`,
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          height : '100vh'
         }
       }><Navbar/> <Timelinee/> <Footer/></div>,
     },
@@ -89,7 +91,8 @@ export default function App() {
       element: <div style={
         {
           backgroundImage: `url(${background2})`,
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          height : '100vh'
         }
       }><Navbar/> <Community/> <Footer/></div>,
     },
