@@ -1,7 +1,32 @@
 import React from 'react'
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
+import { useLocation } from 'react-router-dom'
+import { useQuery, gql } from '@apollo/client';
+
+const GET_COMMUNITY = gql`
+  query GetCommunity($_id: ID!) {
+    community(id: $_id){
+      name
+      description
+      followers
+    }
+  }
+`;
 
 function CommunityProfile(props) {
+  let location = useLocation();
+  const _id = location.search.split('=')[1];
+
+  const { loading, error, data } = useQuery(GET_COMMUNITY, {
+    variables: { _id },
+  });
+  if (loading) return <p>Loading...</p>;
+  if (error) return error.graphQLErrors.map(({ message }, i) => (
+    <p key={i}>{message}</p>
+  ));
+
+  console.log(data);
+
   return (
     <>
       <div className="gradient-custom-2 bg-white" >
@@ -16,7 +41,7 @@ function CommunityProfile(props) {
                 </div>
                 <div className="ms-3" style={{ marginTop: '130px' }}>
                   <MDBTypography tag="h5">{props.title}</MDBTypography>
-                  <MDBCardText>New York</MDBCardText>
+                  <MDBCardText>{data.community.name}</MDBCardText>
                 </div>
               </div>
               <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
@@ -27,7 +52,7 @@ function CommunityProfile(props) {
                     <MDBCardText className="small text-muted mb-0">Posts</MDBCardText>
                   </div>
                   <div className="px-3">
-                    <MDBCardText className="mb-1 h5">1026</MDBCardText>
+                    <MDBCardText className="mb-1 h5">{data.community.followers}</MDBCardText>
                     <MDBCardText className="small text-muted mb-0">Followers</MDBCardText>
                   </div>
                 </div>
