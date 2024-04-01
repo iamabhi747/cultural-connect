@@ -1,5 +1,5 @@
 import React from 'react';
-import Profile from './Profile.jpg';
+import Profile from './Profile.jpeg';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 
 export default function EditButton() {
@@ -17,8 +17,8 @@ export default function EditButton() {
                 </div>
                 <div className="ms-3" style={{ marginTop: '110px' }}>
                   <MDBTypography style={{ color: 'yellow'}} tag="h6">⭐️ Organization</MDBTypography>
-                  <MDBTypography tag="h5">Abhinandan Bhuse</MDBTypography>
-                  <MDBCardText>Pune</MDBCardText>
+                  <MDBTypography tag="h5">United People's Foundation</MDBTypography>
+                  <MDBCardText>Kolhapur</MDBCardText>
                 </div>
               </div>
               <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
@@ -44,10 +44,10 @@ export default function EditButton() {
                 <div className="mb-5">
                   <p className="lead fw-normal mb-1">About</p>
                   <div className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
-                    <MDBCardText className="font-italic mb-0">Heritage Explorer</MDBCardText>
-                    <MDBCardText className="font-italic mb-1">Backdend Developer</MDBCardText>
-                    <MDBCardText className="font-italic mb-1">Lives in Pune, Maharashtra</MDBCardText>
-                    <MDBCardText className="font-italic mb-0">Ethical Hacker</MDBCardText>
+                    <MDBCardText className="font-italic mb-0">United Peoples Foundation|NGO</MDBCardText>
+                    <MDBCardText className="font-italic mb-1">Non-Governmental Organization (NGO)</MDBCardText>
+                    <MDBCardText className="font-italic mb-1">We are a bunch of young minds working for the betterment of society.</MDBCardText>
+                    
                   </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-4">
