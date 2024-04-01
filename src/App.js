@@ -54,6 +54,7 @@ import Community from './components/Community/Community'
 import CommunityProfile from './components/Community/CommunityProfile'
 import Create from './components/Create/Create'
 import background2 from './components/background2.jpg'
+import background4 from './components/background4.jpg'
 
 
 export default function App() {
@@ -67,14 +68,19 @@ export default function App() {
           backgroundSize: 'cover'
         }
       }>
-      <Navbar/>
-      <Post/>
-      <Footer/>
+        <Navbar />
+        <Post />
+        <Footer />
       </div>
     },
     {
       path: "/create",
-      element: <><Navbar/> <Create/> <Footer/></>,
+      element: <div style={
+        {
+          backgroundImage: `url(${background4})`,
+          backgroundSize: 'cover'
+        }
+      }><Navbar /> <Create /> <Footer /></div>,
     },
     {
       path: "/timeline",
@@ -82,9 +88,9 @@ export default function App() {
         {
           backgroundImage: `url(${background2})`,
           backgroundSize: 'cover',
-          height : '100vh'
+          height: '100vh'
         }
-      }><Navbar/> <Timelinee/> <Footer/></div>,
+      }><Navbar /> <Timelinee /> <Footer /></div>,
     },
     {
       path: "/community",
@@ -92,22 +98,22 @@ export default function App() {
         {
           backgroundImage: `url(${background2})`,
           backgroundSize: 'cover',
-          height : '100vh'
+          height: '100vh'
         }
-      }><Navbar/> <Community/> <Footer/></div>,
+      }><Navbar /> <Community /> <Footer /></div>,
     },
     {
       path: "/profile",
-      element: <><Navbar/> <Profile/> <Footer/></>,
+      element: <><Navbar /> <Profile /> <Footer /></>,
     },
     {
       path: '/communityProfile',
-      element: <div><Navbar/> <CommunityProfile/> <Footer/></div>,
+      element: <div><Navbar /> <CommunityProfile /> <Footer /></div>,
     }
   ]);
   return (
     <>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
   )
 }
