@@ -57,6 +57,14 @@ function CommunityProfile(props) {
                   </div>
                 </div>
               </div>
+              <MDBCardBody className="text-black p-4">
+                <div className="mb-5">
+                  <p className="lead fw-normal mb-1">About</p>
+                  <div className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
+                    <MDBCardText className="font-italic mb-1">{data.community.description}</MDBCardText>
+                  </div>
+                </div>
+              </MDBCardBody>
               </MDBCol>
         </MDBRow>
       </MDBContainer>
